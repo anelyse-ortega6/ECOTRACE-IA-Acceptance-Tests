@@ -16,4 +16,4 @@ Feature: Cálculo automático de la huella de carbono
     When el usuario solicita calcular la huella de carbono
     Then el sistema informa que no existen datos suficientes
     And no permite continuar
-    And solicita registrar información adicionalr.
+    And solicita registrar información adicional.
