@@ -1,14 +1,17 @@
 Feature: Escaneo y registro automático de facturas mediante OCR
 
+  Como administrador de una Mype
+  Quiero registrar información de una factura de forma automática
+  Para almacenar los datos al sistema sobre la información del consumo
+  
   Scenario: Registro exitoso de una factura
-
     Given que el usuario ha iniciado sesión en la plataforma
     And se encuentra en la pantalla de escaneo
     When captura una fotografía de una factura válida
     Then el sistema extrae automáticamente los datos principales
     And muestra la información para su validación
     And registra la factura en la base de datos después de la confirmación del usuario
-
+    
   Scenario: La factura presenta una imagen de baja calidad
     Given el usuario intenta escanear la factura
     When la imagén se ve de poca calidad
