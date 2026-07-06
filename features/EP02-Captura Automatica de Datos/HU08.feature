@@ -7,6 +7,10 @@ Feature: Registro de información en modo Offline
   Scenario: Registro exitoso sin conexión
     Given el usuario abre la aplicacion 
     When el usuario registra una nueva factura sin conexion a internet
+      | Dato    | Valor      |
+      | Empresa | Petroperu  |
+      | Consumo | 120 litros |
+    
     Then el sistema almacena la información localmente
     And la marca como pendiente de sincronización.
 
