@@ -5,14 +5,21 @@ Feature: Copias de seguridad automáticas
   Para garantizar la recuperación de la información ante incidentes.
 
   Scenario: Respaldo automático exitoso
-    Given el usuario presenta datos en la plataforma
+    Given el usuario presenta estos datos en la plataforma
+      | Tipo     | Cantidad |
+      | Facturas | 150      |
+      | Reportes | 25       |
+    
     When llega la fecha programada para la copia de seguridad
     Then el sistema genera automáticamente un respaldo
     And almacena la copia en un repositorio seguro.
 
   Scenario: Restauración de información
     Given que existe una copia de seguridad disponible
-    When el administrador solicita restaurar la información del respaldo
+    When el administrador solicita la información del respaldo
+      | Fecha      | Estado     |
+      | 15/07/2026 | Disponible |
+      
     Then el sistema recupera correctamente los datos respaldados
     And mantiene la seguridad de la información.
 
