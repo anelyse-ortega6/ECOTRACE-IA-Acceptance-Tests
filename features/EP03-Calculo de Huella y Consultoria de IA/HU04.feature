@@ -6,12 +6,20 @@ Feature: Generación de planes de acción con Inteligencia Artificial
 
   Scenario: Generación exitosa del plan de acción
     Given que el sistema ya calculó la huella de carbono
-    When la inteligencia artificial analiza los resultados obtenidos
+    When la inteligencia artificial analiza los siguientes resultados
+      | Indicador         | Valor   |
+      | Huella CO2        | 3.5 Ton |
+      | Consumo eléctrico | 520 kWh |
+    
     Then genera un plan de acción personalizado a la situacion
     And muestra recomendaciones para disminuir el impacto ambiental de la empresa.
 
   Scenario: Actualización del plan de acción
-    Given que el usuario registró nuevos consumos y recalculó la huella
+    Given que el usuario registró nuevos consumos 
+      | Tipo         | Valor   |
+      | Electricidad | 400 kWh |
+      
+    And el sistema recalculó la huella
     When la inteligencia artificial vuelve a analizar la información
     Then genera un nuevo plan de acción actualizado
     And reemplaza las recomendaciones anteriores en el almacenamiento.
