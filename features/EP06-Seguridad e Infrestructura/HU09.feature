@@ -6,12 +6,19 @@ Feature: Protección de datos mediante encriptación
   
   Scenario: Almacenamiento seguro de la información
     Given que el usuario utiliza la plataforma EcoTrace IA
-    When el usuario registra información sensible
+    When el usuario registra información
+      | Campo   | Valor       |
+      | Empresa | PetroPerú   |
+      | RUC     | 20100070970 |
+      
     Then el sistema almacena los datos utilizando mecanismos de cifrados y encriptación
     And protege la información frente a accesos no autorizados.
 
   Scenario: Transmisión segura de información
-    Given que el usuario envía información al servidor
+    Given que el usuario envía información 
+      | Campo   | Valor      |
+      | Consumo | 120 litros |
+      
     When el sistema transmite los datos
     Then la comunicación se realiza mediante una conexión segura
     And la información permanece protegida durante la transmisión.
